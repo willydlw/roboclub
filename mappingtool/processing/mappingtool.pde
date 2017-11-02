@@ -37,7 +37,7 @@ void draw() // basicly the same as loop()
 
 void drawGrid()
 {
-   for(Cell iter: cells)
+   for(Cell icell: cells)
    {
      
    }
