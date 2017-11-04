@@ -45,13 +45,9 @@ void setup() // called once
 void draw() // basicly the same as loop()
 {
   background(255);
-  // draw the game board 
-  //for(Cell c : gamegrid.cells())
-  //{
-  //  rect(c.getX(),c.getY(),c.getSideLength(),c.getSideLength());  
-  //}
   
   drawGameGrid(gamegrid);
+  drawLines();
   drawRobot(simRobot);
   simRobot.update();
   Cell currentCell=gamegrid.getCurrentCell(simRobot); // find the cell the robot is sitting on
@@ -69,9 +65,16 @@ void drawGameGrid(Grid g)
 }
 
 // draws the robot on the grid
-public void drawRobot(Irobot robot)
+void drawRobot(Irobot robot)
 {
   PVector p=robot.getPos();
   fill(0);
   rect(p.x,p.y,50,50);
+}
+
+// draws the lines on the game grid 
+void drawLines()
+{
+  line(0,0,width,height);
+  line(0,height,width,0);
 }
