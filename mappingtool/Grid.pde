@@ -11,7 +11,17 @@ public class Grid
     this.gwidth=gwidth;
     this.ghight=ghight;
     this.cellSideLength=100;
-    cells=new Cell[gwidth*ghight];
+    int numCells=(gwidth/cellSideLength)*(ghight/cellSideLength);
+    cells=new Cell[numCells];
+    this.populateGrid();
+  }
+  
+  public void printCells()
+  {
+    for(Cell cell : cells)
+    {
+      System.out.println(cell); 
+    }
   }
   
   private void populateGrid()
@@ -21,9 +31,16 @@ public class Grid
     {
       for(int y=0;y<ghight;y+=this.cellSideLength)
       {
-         
+         cells[cellId]=new Cell(new PVector(x,y),cellId);
+         cellId++;
+         //System.out.println(cellId);
+         //System.out.println("x: "+x+" y: "+y);
       }
     }
   }
   
+  public Cell[] cells()
+  {
+    return cells; // return the cell array
+  }
 }

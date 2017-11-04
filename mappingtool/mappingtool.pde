@@ -23,7 +23,7 @@ void setup() // called once
   //}
   //  drawGrid();
   
-  gamegrid=new Grid(8,8);
+  gamegrid=new Grid(width,height);
   // test cell
   Cell test=new Cell(new PVector(0,0),1);
   if(test.posInCell(new PVector(50,175)))
@@ -34,22 +34,27 @@ void setup() // called once
   {
     System.out.println("point is not in cell"); 
   }
+  
+  gamegrid.printCells();
 }
 
 void draw() // basicly the same as loop()
 {
-  
-  
   background(255);
   // draw the game board 
-
+  //for(Cell c : gamegrid.cells())
+  //{
+  //  rect(c.getX(),c.getY(),c.getSideLength(),c.getSideLength());  
+  //}
+  
+  drawGameGrid(gamegrid);
 }
 
-//void drawGrid()
-//{
-//   for(Cell icell: cells)
-//   {
-//     // add a cell 
-//   }
-  
-//}
+// function for drawing a game grid to the window
+void drawGameGrid(Grid g)
+{
+  for(Cell c : g.cells())
+  {
+    rect(c.getX(),c.getY(),c.getSideLength(),c.getSideLength()); 
+  }
+}

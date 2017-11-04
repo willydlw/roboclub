@@ -33,7 +33,8 @@ public class Cell
  
   public String toString()
   {
-    return ("X: "+posX+" Y: "+posY+" cell id: "+id); 
+    //return ("X: "+posX+" Y: "+posY+" cell id: "+id); 
+    return ("X: "+pos.x+" Y: "+pos.y+" cell id: "+id);
   }
 
   public Boolean posInCell(PVector argpos)
@@ -58,5 +59,20 @@ public class Cell
      return inSpace;
   }
   
+  // getters and setters
   
+  public float getSideLength()
+  {
+    return (float) this.sideLength; // cast b/c we need a float
+  }
+  
+  public float getX()
+  {
+    return this.pos.x; 
+  }
+  
+  public float getY()
+  {
+    return this.pos.y; 
+  }
 }
