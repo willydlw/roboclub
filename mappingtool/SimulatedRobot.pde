@@ -59,8 +59,10 @@ public class SimulatedRobot implements Irobot
   {
     moves.add(new PVector(0,150));
     moves.add(new PVector(150,0));
+    moves.add(new PVector(110,30));
     moves.add(new PVector(0,-150));
     moves.add(new PVector(-150,0));
+    moves.add(new PVector(-110,-30));
   }
   
   public String toString()

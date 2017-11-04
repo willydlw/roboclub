@@ -44,4 +44,23 @@ public class Grid
   {
     return cells; // return the cell array
   }
+  
+  // returns the first cell that the robot is currently sitting on
+  // could be better, but that level of functionality may not be nessary
+  public Cell getCurrentCell(Irobot r)
+  {
+    Cell currentCell=null;
+      
+    for(Cell cell : cells) // iterate through all the cells
+    {
+       if(cell.posInCell(r.getPos())) // until the first cell that the robot occubies
+       {
+         // then return that cell and quit the loop
+         currentCell=cell; 
+         break;
+       }
+    }
+    
+    return currentCell;
+  }
 }
