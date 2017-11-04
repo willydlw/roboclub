@@ -25,10 +25,6 @@ public class Cell
   {
     return ("X: "+posX+" Y: "+posY+" cell id: "+id); 
   }
-  
-  public int sideLength()
-  {
-     
-  }
+
   
 }
