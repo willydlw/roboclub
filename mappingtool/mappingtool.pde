@@ -55,7 +55,7 @@ void draw() // basicly the same as loop()
   drawRobot(simRobot);
   simRobot.update();
   Cell currentCell=gamegrid.getCurrentCell(simRobot); // find the cell the robot is sitting on
-  System.out.println(currentCell);
+  System.out.println(currentCell.id);
 }
 
 // function for drawing a game grid to the window
