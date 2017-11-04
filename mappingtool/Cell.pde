@@ -2,11 +2,12 @@
 public class Cell 
 {
   // instance values
-  // don't use these
+  // don't use posX and posY, I'm gonna delete them at some point
   private int posX;
   private int posY;
   PVector pos; // use this instead
   private int sideLength;
+  public color cellColor; // current color of the cell
   public int id;
   
   public Cell(int posX,int posY) 

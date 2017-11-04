@@ -5,6 +5,7 @@ import java.util.*;
 //Cell[] cells; // all the cells in the array
 
 Grid gamegrid; // lol, tron
+Irobot simRobot;
 
 void setup() // called once 
 {
@@ -36,6 +37,9 @@ void setup() // called once
   }
   
   gamegrid.printCells();
+  // load up a new simulated robot 
+  simRobot=new SimulatedRobot(new PVector(120,132));
+  simRobot.connect();
 }
 
 void draw() // basicly the same as loop()
@@ -48,13 +52,24 @@ void draw() // basicly the same as loop()
   //}
   
   drawGameGrid(gamegrid);
+  drawRobot(simRobot);
+  simRobot.update();
 }
 
 // function for drawing a game grid to the window
 void drawGameGrid(Grid g)
 {
+  fill(255);
   for(Cell c : g.cells())
   {
     rect(c.getX(),c.getY(),c.getSideLength(),c.getSideLength()); 
   }
+}
+
+// draws the robot on the grid
+public void drawRobot(Irobot robot)
+{
+  PVector p=robot.getPos();
+  fill(0);
+  rect(p.x,p.y,50,50);
 }

@@ -32,6 +32,7 @@ public class Grid
       for(int y=0;y<ghight;y+=this.cellSideLength)
       {
          cells[cellId]=new Cell(new PVector(x,y),cellId);
+         cells[cellId].cellColor=color(255,255,255); // wtf idk ... 
          cellId++;
          //System.out.println(cellId);
          //System.out.println("x: "+x+" y: "+y);
